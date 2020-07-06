@@ -1,0 +1,12 @@
+# This workflow is triggered on pushes to the repository.
+on: [push]
+
+jobs:
+  build:
+    name: Build Android app
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Build Android project"
+      uses: vgaidarji/android-github-actions-build@v1.0.1
+      with:
+        args: "./gradlew assembleDebug"
